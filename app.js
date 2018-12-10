@@ -8,10 +8,8 @@ module.exports = app => {
         app.rooms = [];
         app.eqis = [];
         app.crypto = value => {
-            console.log(crypto.createHmac('sha256', value), 'crypto');
-            console.log(crypto.createHmac('sha256', value).update('gaoxiang123456.'), 'crypto');
             const hash = crypto.createHmac('sha256', value)
-                .update('gaoxiang123456.')
+                .update('')
                 .digest('hex');
             return hash;
         };
